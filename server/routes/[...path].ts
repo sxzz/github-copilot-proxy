@@ -1,4 +1,3 @@
-import process from 'node:process'
 import {
   eventHandler,
   getRequestHeaders,
@@ -6,9 +5,10 @@ import {
   sendWebResponse,
   setResponseStatus,
 } from 'h3'
+import { useRuntimeConfig } from 'nitropack/runtime'
 
 export default eventHandler(async (event) => {
-  const githubToken = process.env.GITHUB_TOKEN
+  const githubToken = useRuntimeConfig(event).githubToken
   if (!githubToken) {
     setResponseStatus(event, 401)
     return {
