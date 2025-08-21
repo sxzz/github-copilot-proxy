@@ -4,29 +4,29 @@
   "compilerOptions": {
     // Module resolution
     "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
     "jsx": "preserve",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
 
+    // "noUnusedParameters": true,
+
+    // Libs & paths
+    "lib": ["ESNext", "DOM"],
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
     // Core checks
     "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "useUnknownInCatchVariables": true,
     "noEmit": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
 
     // Additional safety
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "useUnknownInCatchVariables": true,
-    "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-
-     // Libs & paths
-    "lib": ["ESNext", "DOM"],
-    "baseUrl": ".",
+    "skipLibCheck": true
   }
 }

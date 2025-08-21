@@ -1,12 +1,21 @@
 {
   "name": "nitro-app",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nitro build",
-    "dev": "nitro dev"
+    "dev": "nitro dev",
+    "lint": "eslint --cache .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@sxzz/eslint-config": "^7.1.4",
+    "@sxzz/prettier-config": "^2.2.4",
+    "eslint": "^9.33.0",
     "h3": "^1.15.4",
-    "nitropack": "^2.12.4"
-  }
+    "nitropack": "^2.12.4",
+    "prettier": "^3.6.2"
+  },
+  "prettier": "@sxzz/prettier-config"
 }
