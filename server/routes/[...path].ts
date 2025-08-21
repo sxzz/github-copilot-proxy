@@ -13,7 +13,7 @@ export default eventHandler(async (event) => {
     setResponseStatus(event, 401)
     return {
       status: 401,
-      message: 'GITHUB_TOKEN is missing',
+      message: 'NITRO_GITHUB_TOKEN is missing',
     }
   }
   const copilotToken = await getCopilotToken(githubToken)
