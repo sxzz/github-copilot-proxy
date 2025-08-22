@@ -7,5 +7,6 @@ export default defineNitroConfig({
   imports: false,
   runtimeConfig: {
     githubToken: '',
+    apiKey: '123456',
   },
 })

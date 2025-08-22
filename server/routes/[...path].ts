@@ -1,5 +1,7 @@
 import {
   eventHandler,
+  getQuery,
+  getRequestHeader,
   getRequestHeaders,
   getRequestWebStream,
   sendWebResponse,
@@ -8,7 +10,21 @@ import {
 import { useRuntimeConfig } from 'nitropack/runtime'
 
 export default eventHandler(async (event) => {
-  const githubToken = useRuntimeConfig(event).githubToken
+  const runtimeConfig = useRuntimeConfig(event)
+
+  let apiKey = getQuery(event).apiKey
+  if (!apiKey) {
+    apiKey = getRequestHeader(event, 'Authorization')?.replace(/^Bearer /, '')
+  }
+  if (!apiKey || apiKey !== runtimeConfig.apiKey) {
+    setResponseStatus(event, 401)
+    return {
+      status: 401,
+      message: 'API key is invalid',
+    }
+  }
+
+  const githubToken = runtimeConfig.githubToken
   if (!githubToken) {
     setResponseStatus(event, 401)
     return {
