@@ -1,3 +1,11 @@
-# Nitro starter
+# GitHub Copilot Proxy
 
-Look at the [nitro quick start](https://nitro.build/guide#quick-start) to learn more how to get started.
+This is a proxy backend for GitHub Copilot.
+
+## Credits
+
+Thanks to [bokutotu/copilot-client.rs](https://github.com/bokutotu/copilot-client.rs) for the implementation details.
+
+## License
+
+MIT License
