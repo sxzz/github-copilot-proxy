@@ -54,6 +54,8 @@ export default eventHandler(async (event) => {
     method: event.method,
     headers: headers as any,
     body,
+    // @ts-expect-error missing field
+    duplex: 'half',
   })
 
   return sendWebResponse(event, response)
